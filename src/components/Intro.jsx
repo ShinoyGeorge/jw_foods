@@ -3,6 +3,9 @@ import topSeller from '../assets/top_seller.jpg';
 import fishMeat from '../assets/meat_fish.jpg';
 import preSetMeal from '../assets/pre_set_meals.jpg';
 import DeliveryCalc from './DeliveryCalc.jsx';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchConfigurations } from '../store/admin.js';
 
 export default function Intro() {
     const cards = [
@@ -11,28 +14,29 @@ export default function Intro() {
             title: 'Top Sellers',
             description:
                 'Not sure where to start? Try the top picks our customers keep coming back for!',
-            handleClick: () => {
-                console.log('topSeller clicked');
-            },
+            link: '/top-Seller',
         },
         {
             src: fishMeat,
             title: 'Meat & Fish',
             description: 'Elevate Your Cuisine with Premium Meats & Fish',
-            handleClick: () => {
-                console.log('Meat and fish clicked');
-            },
+            link: '/fist-meat',
         },
         {
             src: preSetMeal,
             title: 'Pre-set Meals',
             description:
                 'Revolutionize your meals with our healthy meal prep solutions!',
-            handleClick: () => {
-                console.log('pre set meals clicked');
-            },
+            link: '/preset-meals',
         },
     ];
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchConfigurations());
+    }, [dispatch]);
+
     return (
         <div className="min-h-screen bg-white">
             <section className="bg-jwfoods-lightgray py-20">

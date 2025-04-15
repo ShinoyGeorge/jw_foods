@@ -7,7 +7,7 @@ export default function Header() {
                 <a className="flex items-center">
                     <div className="flex items-center space-x-2">
                         <img src={logo} alt="Logo" className="h-16 w-16" />
-                        <span className="text-custom-green text-3xl font-bold">
+                        <span className="text-3xl font-bold text-custom-green">
                             JW Farms
                         </span>
                     </div>
@@ -22,10 +22,10 @@ function Nav() {
     const navItems = ['Services', 'Areas', 'About', 'Contact Us'];
     return (
         <nav className="hidden space-x-8 md:flex">
-            {navItems.map((item, i) => (
+            {navItems.map((item) => (
                 <a
-                    className="hover:text-custom-green text-lg font-medium text-white transition-colors"
-                    key={i}
+                    className="text-lg font-medium text-white transition-colors hover:text-custom-green"
+                    key={item}
                     href={item.href}
                 >
                     {item}

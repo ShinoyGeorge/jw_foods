@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 export default function Card(props) {
+    console.log(props);
     return (
         <div className="overflow-hidden rounded-lg bg-white shadow-lg">
             <div className="h-48 overflow-hidden">
@@ -17,12 +18,12 @@ export default function Card(props) {
                 <p className="mb-4 h-8 pb-16 text-gray-700">
                     {props.description}
                 </p>
-                <button
+                <Link
+                    to={`\\ ${props.link}`}
                     className="flex items-center font-semibold text-custom-green"
-                    onClick={props.handleClick}
                 >
                     See More →
-                </button>
+                </Link>
             </div>
         </div>
     );
